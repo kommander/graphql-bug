@@ -41,12 +41,10 @@ function createOriginEndpoint() {
         return 'Just a simple API'
       },
       hello (_, { name }) {
-        return new Promise((accept, reject) => {
-          if (!!name) {
-            accept(`Hello ${name}!`)
-          }
-          reject("Sorry sir but what should I call you?")
-        })
+        if (!!name) {
+          return `Hello ${name}!`
+        }
+        throw Error('Sorry friend but what should I call you?')
       },
       fire (_) {
         throw Error('This error is intentionally thrown!')

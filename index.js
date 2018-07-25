@@ -4,7 +4,7 @@ const { HttpLink } = require('apollo-link-http')
 const { GraphQLServer } = require('graphql-yoga')
 
 async function createStitchedServer () {
-  const link = = new HttpLink({
+  const link = new HttpLink({
     uri: 'http://localhost:3000/graphql'
   })
 

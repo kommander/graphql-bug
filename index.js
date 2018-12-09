@@ -29,25 +29,14 @@ async function createStitchedServer () {
 function createOriginEndpoint() {
   const typeDefs = `
     type Query {
-      info: String
-      hello(name: String): String
       fire: Boolean
     }
   `
 
   const resolvers = {
     Query: {
-      info (_) {
-        return 'Just a simple API'
-      },
-      hello (_, { name }) {
-        if (!!name) {
-          return `Hello ${name}!`
-        }
-        throw Error('Sorry friend but what should I call you?')
-      },
       fire (_) {
-        throw Error('This error is intentionally thrown!')
+        throw { message: 'This error is intentionally thrown!' };
       }
     }
   }

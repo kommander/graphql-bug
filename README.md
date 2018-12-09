@@ -1,4 +1,4 @@
-# Reproduction guide
+# Reproduction guide for `[object Object]` error messages
 
 1. Install all dependencies, either `yarn` or `npm install`
 2. `node index.js`
